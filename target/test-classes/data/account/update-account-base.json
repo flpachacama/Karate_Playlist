@@ -1,0 +1,17 @@
+{
+  "name": "Karate QA User Updated",
+  "title": "Mrs",
+  "birth_date": "12",
+  "birth_month": "8",
+  "birth_year": "1994",
+  "firstname": "Karate",
+  "lastname": "Automation Updated",
+  "company": "QA Team Updated",
+  "address1": "456 Update Avenue",
+  "address2": "Floor 2",
+  "country": "United States",
+  "zipcode": "10001",
+  "state": "New York",
+  "city": "New York",
+  "mobile_number": "0987654321"
+}
