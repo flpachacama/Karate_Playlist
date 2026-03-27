@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: com.softka.runner.ApiTestRunner
+-------------------------------------------------------------------------------
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 25.383 s - in com.softka.runner.ApiTestRunner

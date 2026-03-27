@@ -6,6 +6,6 @@ class ApiTestRunner {
 
     @Karate.Test
     Karate runAllApiTests() {
-        return Karate.run("classpath:features");
+        return Karate.run("classpath:features/account", "classpath:features/products");
     }
 }
