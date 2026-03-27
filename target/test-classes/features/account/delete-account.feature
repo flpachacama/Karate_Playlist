@@ -1,4 +1,4 @@
-Feature: DELETE account API
+ Feature: DELETE account API
 
   Background:
     * url baseUrl
@@ -7,7 +7,8 @@ Feature: DELETE account API
 
   Scenario: Delete existing account and validate response fields
     * def createPayload = accountData.buildCreatePayload()
-    * def created = call read(accountActionsFeature + '@createAccount') { payload: '#(createPayload)' }
+    * def createArgs = { payload: '#(createPayload)' }
+    * def created = call read(accountActionsFeature + '@createAccount') createArgs
     * def credentials = created.accountCredentials
 
     Given path 'api', 'deleteAccount'

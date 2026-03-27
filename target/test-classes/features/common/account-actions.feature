@@ -5,7 +5,7 @@ Feature: Common account actions for API tests
 
   @createAccount
   Scenario: Create account with valid data
-    * def payload = __arg.payload
+    * match payload contains { name: '#string', email: '#string', password: '#string' }
     Given path 'api', 'createAccount'
     And form fields payload
     When method post
@@ -16,7 +16,7 @@ Feature: Common account actions for API tests
 
   @deleteAccount
   Scenario: Delete account with existing credentials
-    * def credentials = __arg.credentials
+    * match credentials contains { email: '#string', password: '#string' }
     Given path 'api', 'deleteAccount'
     And form fields credentials
     When method delete

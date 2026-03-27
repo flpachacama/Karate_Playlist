@@ -7,7 +7,8 @@ Feature: PUT update account API
 
   Scenario: Update existing account and validate response fields
     * def createPayload = accountData.buildCreatePayload()
-    * def created = call read(accountActionsFeature + '@createAccount') { payload: '#(createPayload)' }
+    * def createArgs = { payload: '#(createPayload)' }
+    * def created = call read(accountActionsFeature + '@createAccount') createArgs
     * def credentials = created.accountCredentials
     * def updatePayload = accountData.buildUpdatePayload(credentials.email, credentials.password)
 
@@ -19,4 +20,5 @@ Feature: PUT update account API
     And match response.responseCode == 200
     And match response.message contains 'updated'
 
-    * call read(accountActionsFeature + '@deleteAccount') { credentials: '#(credentials)' }
+    * def deleteArgs = { credentials: '#(credentials)' }
+    * call read(accountActionsFeature + '@deleteAccount') deleteArgs

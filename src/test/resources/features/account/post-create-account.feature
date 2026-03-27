@@ -17,4 +17,5 @@ Feature: POST create account API
 
     # Cleanup to keep tests idempotent.
     * def credentials = { email: '#(createPayload.email)', password: '#(createPayload.password)' }
-    * call read(accountActionsFeature + '@deleteAccount') { credentials: '#(credentials)' }
+    * def deleteArgs = { credentials: '#(credentials)' }
+    * call read(accountActionsFeature + '@deleteAccount') deleteArgs
